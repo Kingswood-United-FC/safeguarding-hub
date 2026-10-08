@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kingswood United Safeguarding Hub</title>
+<meta name="description" content="Who to tell about a safeguarding or welfare concern at Kingswood United FC, how to report it, and the club's policies and codes of conduct.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Oswald:wght@500;600&display=swap">
+<style>
+/* Layout: one phone-first reading column; black-and-amber masthead, then how to report, who to tell, then the documents. */
+:root {
+  --paper: #ffffff;
+  --panel: #f5f2ec;
+  --ink: #1b1819;
+  --ink-soft: #595349;
+  --rule: #ddd6c9;
+  --mast: #231f20;
+  --mast-ink: #ffffff;
+  --amber: #f7931d;
+  --amber-ink: #8f5200;
+  --on-amber: #1b1819;
+  --alert: #a3140c;
+  --alert-ground: #fdeceb;
+  --display: "Oswald", "Arial Narrow", "Segoe UI", sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141212; --panel: #201d1c; --ink: #f3efe8; --ink-soft: #b9b2a6; --rule: #3c3733;
+    --mast: #000000; --mast-ink: #ffffff; --amber: #f7931d; --amber-ink: #ffb454; --on-amber: #1b1819;
+    --alert: #ffb4ab; --alert-ground: #3b1512; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #141212; --panel: #201d1c; --ink: #f3efe8; --ink-soft: #b9b2a6; --rule: #3c3733;
+  --mast: #000000; --mast-ink: #ffffff; --amber: #f7931d; --amber-ink: #ffb454; --on-amber: #1b1819;
+  --alert: #ffb4ab; --alert-ground: #3b1512; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.5; }
+img { max-width: 100%; }
+a { color: inherit; text-underline-offset: 0.18em; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.15; margin: 0; text-wrap: balance; }
+p, ul, ol { margin: 0; }
+
+.mast { background: var(--mast); color: var(--mast-ink); padding-inline: 16px; padding-block: 22px 20px; border-bottom: 5px solid var(--amber); }
+.mast-in { max-width: 44rem; margin-inline: auto; display: flex; gap: 16px; align-items: center; }
+.mast img { width: 88px; height: 88px; flex: none; }
+.mast-text { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.strap { font-family: var(--display); font-weight: 500; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.875rem; }
+.mast h1 { font-size: 1.85rem; }
+.jump { max-width: 44rem; margin-inline: auto; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.jump a { font-size: 0.9375rem; text-decoration: none; border: 1px solid var(--amber); color: var(--mast-ink); padding: 6px 12px; border-radius: 999px; }
+.jump a.go { background: var(--amber); color: var(--on-amber); font-weight: 700; }
+
+.wrap { max-width: 46rem; margin-inline: auto; padding-inline: 16px; padding-block: 20px 40px; display: flex; flex-direction: column; gap: 34px; }
+section { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 12px; }
+section > h2 { font-size: 1.5rem; }
+h3 { font-size: 1.125rem; }
+.lede { font-size: 1.125rem; }
+.soft { color: var(--ink-soft); }
+ul.plain, ol.steps { padding-left: 1.3em; display: flex; flex-direction: column; gap: 8px; }
+
+.alert { background: var(--alert-ground); border-left: 6px solid var(--alert); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.alert h2 { color: var(--alert); font-size: 1.375rem; }
+.alert h3 { color: var(--alert); }
+.alert .big { font-weight: 700; font-size: 1.25rem; }
+.numlist { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.facts { display: grid; grid-template-columns: minmax(7.5rem, 11rem) 1fr; gap: 8px 14px; margin: 0; }
+.facts dt { font-weight: 700; }
+.facts dd { margin: 0; }
+@media (max-width: 460px) { .facts { grid-template-columns: 1fr; gap: 2px; } .facts dd { margin-bottom: 8px; } }
+
+.report { background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 12px; border-top: 5px solid var(--amber); }
+.cta { align-self: flex-start; display: inline-block; background: var(--amber); color: var(--on-amber); font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.125rem; text-decoration: none; padding: 12px 20px; border-radius: 6px; }
+
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.person { background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.person-top { display: flex; gap: 14px; align-items: center; }
+.person-top img { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; flex: none; }
+.person-top div { min-width: 0; }
+.person h3 { text-transform: none; letter-spacing: 0; font-size: 1.1875rem; }
+.person .role { font-weight: 700; }
+.person .where { color: var(--ink-soft); font-size: 0.9375rem; }
+.reach { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.reach li, .line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.val { font-weight: 700; overflow-wrap: anywhere; min-width: 0; user-select: all; }
+.copy { font: inherit; font-size: 0.8125rem; color: var(--ink); background: transparent; border: 1px solid var(--ink-soft); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+
+.outside { list-style: none; padding: 0; display: flex; flex-direction: column; }
+.outside li { padding-block: 12px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 4px; }
+.outside li:last-child { border-bottom: 1px solid var(--rule); }
+.outside .who { font-weight: 700; }
+.todo { background: #fff3c4; color: #4a3600; padding: 2px 8px; border: 1px dashed #b98900; align-self: flex-start; font-size: 0.9375rem; }
+
+.levels { list-style: none; padding: 0; margin-top: 6px; display: flex; flex-direction: column; gap: 6px; }
+.levels li { padding-left: 12px; border-left: 6px solid var(--rule); }
+.levels .g { border-color: #2e7d32; } .levels .a { border-color: #f7931d; } .levels .r { border-color: #b3261e; }
+
+.group { display: flex; flex-direction: column; gap: 8px; }
+.group > p { color: var(--ink-soft); font-size: 0.9375rem; }
+details.doc, a.doclink { border: 1px solid var(--rule); }
+details.doc > summary, a.doclink { cursor: pointer; padding: 12px 14px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; list-style: none; }
+a.doclink { text-decoration: none; }
+details.doc > summary::-webkit-details-marker { display: none; }
+.t { font-weight: 700; }
+details.doc > summary .t::before { content: "+ "; color: var(--amber-ink); font-weight: 700; }
+details.doc[open] > summary .t::before { content: "\2212  "; }
+a.doclink .t::before { content: "\2197  "; color: var(--amber-ink); font-weight: 700; }
+.ref { font-weight: 400; color: var(--ink-soft); font-size: 0.875rem; white-space: nowrap; }
+.n { color: var(--ink-soft); font-size: 0.875rem; white-space: nowrap; }
+.pdf { padding: 0 14px 10px; font-weight: 700; }
+.pages { display: flex; flex-direction: column; gap: 10px; padding: 0 10px 12px; }
+.pages img { display: block; width: 100%; height: auto; background: #ffffff; border: 1px solid var(--rule); }
+@media (max-width: 460px) { details.doc > summary, a.doclink { flex-direction: column; gap: 2px; } }
+
+.share { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.share img { width: 132px; height: 132px; background: #ffffff; padding: 6px; flex: none; }
+.share div { min-width: 0; flex: 1 1 14rem; display: flex; flex-direction: column; gap: 6px; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 18px; display: flex; flex-direction: column; gap: 12px; font-size: 0.9375rem; color: var(--ink-soft); }
+.logos { background: #231f20; padding: 12px 16px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; align-self: flex-start; }
+.logos img { height: 44px; width: auto; }
+@media (max-width: 420px) { .mast h1 { font-size: 1.5rem; } .mast img { width: 68px; height: 68px; } }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-in">
+    <img src="img/crest.png" alt="Kingswood United crest" width="88" height="88">
+    <div class="mast-text">
+      <span class="strap">Fun · Excellence · Safe · Family · Inclusive</span>
+      <h1>Safeguarding &amp; welfare hub</h1>
+    </div>
+  </div>
+  <nav class="jump" aria-label="On this page">
+    <a class="go" href="#report">Report a concern</a>
+    <a href="#contacts">Who to tell</a>
+    <a href="#players">For players</a>
+    <a href="#emergency">Emergency plan</a>
+    <a href="#documents">Policies &amp; codes</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <section class="alert" aria-labelledby="h-now">
+    <h2 id="h-now">If someone is in immediate danger</h2>
+    <p class="big">Call 999. Don't wait to fill in a form or speak to the club first.</p>
+    <p>For an urgent concern about a child in Hull, you can also call children's social care:</p>
+    <ul class="numlist">
+      <li class="line"><span>Early Help and Safeguarding Hub (EHASH):</span> <a class="val" href="tel:01482448879">01482 448 879</a> <span>option 4</span></li>
+      <li class="line"><span>Emergency Duty Team (out of hours):</span> <a class="val" href="tel:01482300304">01482 300 304</a></li>
+      <li class="line"><span>NSPCC Helpline, for advice at any time:</span> <a class="val" href="tel:08088005000">0808 800 5000</a></li>
+    </ul>
+    <p>Once everyone is safe, tell the welfare team so the club can follow up.</p>
+  </section>
+
+  <section id="report" aria-labelledby="h-report">
+    <h2 id="h-report">Worried about someone? Tell us</h2>
+    <p class="lede">For any worry about the safety or wellbeing of a child or adult at Kingswood United, tell the welfare team. No concern is too small, and you don't need proof.</p>
+    <div class="report">
+      <h3>Report it online</h3>
+      <p>The report form goes straight to the welfare team. It asks for your email address so they can reply to you.</p>
+      <a class="cta" href="https://forms.gle/k6hz9jeQwVFTM2Ue9" target="_blank" rel="noopener">Open the report form</a>
+      <p>Can't use the form? Call or text the welfare contact for your age group below, or email <a class="val" href="mailto:welfare@kingswoodunited.co.uk">welfare@kingswoodunited.co.uk</a>. They will complete the form for you.</p>
+    </div>
+    <p>You'll get an acknowledgement within 5 days.</p>
+  </section>
+
+  <section id="contacts" aria-labelledby="h-contacts">
+    <h2 id="h-contacts">Who to tell</h2>
+    <p>Each age group has its own welfare contact. If you aren't sure who to contact, or can't reach them, any of the team will help.</p>
+    <div class="people">
+      <div class="person">
+        <div class="person-top">
+          <img src="img/luke.jpg" alt="Luke Shearsmith" width="76" height="76">
+          <div>
+            <h3>Luke Shearsmith</h3>
+            <p class="role">Welfare Assistant</p>
+            <p class="where">Under 3s to under 6s, and our Wildcats, Cubs and Ballers programmes</p>
+          </div>
+        </div>
+        <ul class="reach">
+          <li><a class="val" href="tel:07375486569" aria-label="Call Luke on 07375 486569">07375 486569</a> <button class="copy" type="button" data-copy="07375486569">Copy</button></li>
+        </ul>
+      </div>
+      <div class="person">
+        <div class="person-top">
+          <img src="img/alex.jpg" alt="Alex Seddon" width="76" height="76">
+          <div>
+            <h3>Alex Seddon</h3>
+            <p class="role">Lead Welfare Officer</p>
+            <p class="where">Under 7s to under 9s. Alex also leads the welfare team</p>
+          </div>
+        </div>
+        <ul class="reach">
+          <li><a class="val" href="tel:07590475115" aria-label="Call Alex on 07590 475115">07590 475115</a> <button class="copy" type="button" data-copy="07590475115">Copy</button></li>
+        </ul>
+      </div>
+      <div class="person">
+        <div class="person-top">
+          <img src="img/becki.jpg" alt="Becki Gregory" width="76" height="76">
+          <div>
+            <h3>Becki Gregory</h3>
+            <p class="role">Welfare Assistant</p>
+            <p class="where">Under 10s to under 12s</p>
+          </div>
+        </div>
+        <ul class="reach">
+          <li><a class="val" href="tel:07934348671" aria-label="Call Becki on 07934 348671">07934 348671</a> <button class="copy" type="button" data-copy="07934348671">Copy</button></li>
+        </ul>
+      </div>
+      <div class="person">
+        <div class="person-top">
+          <img src="img/emma-leigh.jpg" alt="Emma-Leigh Fairclough" width="76" height="76">
+          <div>
+            <h3>Emma-Leigh Fairclough</h3>
+            <p class="role">Welfare Assistant</p>
+            <p class="where">Under 13s to under 15s</p>
+          </div>
+        </div>
+        <ul class="reach">
+          <li><a class="val" href="tel:07888181864" aria-label="Call Emma-Leigh on 07888 181864">07888 181864</a> <button class="copy" type="button" data-copy="07888181864">Copy</button></li>
+        </ul>
+      </div>
+      <div class="person">
+        <div class="person-top">
+          <img src="img/charlotte.jpg" alt="Charlotte Edmondson" width="76" height="76">
+          <div>
+            <h3>Charlotte Edmondson</h3>
+            <p class="role">Behaviour Lead</p>
+            <p class="where">16 and over, and our open age teams</p>
+          </div>
+        </div>
+        <ul class="reach">
+          <li><a class="val" href="tel:07840038469" aria-label="Call Charlotte on 07840 038469">07840 038469</a> <button class="copy" type="button" data-copy="07840038469">Copy</button></li>
+        </ul>
+      </div>
+    </div>
+    <p>All five share one inbox: <span class="line"><a class="val" href="mailto:welfare@kingswoodunited.co.uk">welfare@kingswoodunited.co.uk</a> <button class="copy" type="button" data-copy="welfare@kingswoodunited.co.uk">Copy</button></span></p>
+    <p>You can also speak to your team's coach or manager at any session. Every Kingswood United coach and team official must hold an Enhanced DBS check and the FA's Safeguarding Children qualification, and will pass your concern to the welfare team. If your concern is about a coach, go straight to the welfare team.</p>
+    <p>Please don't raise concerns in WhatsApp groups, team chats or on social media. Contact the welfare team directly so the details stay private.</p>
+  </section>
+
+  <section id="outside" aria-labelledby="h-outside">
+    <h2 id="h-outside">If your concern is about the welfare team or a committee member</h2>
+    <p>Contact Paul first. If you can't reach him, or your concern involves him, contact Tom.</p>
+    <ul class="outside">
+      <li><span class="who">Paul Richardson, Kingswood Sports CIO Safeguarding Lead and Club Chair</span>
+        <span class="line"><a class="val" href="mailto:paul.richardson@kingswoodsports.co.uk">paul.richardson@kingswoodsports.co.uk</a> <button class="copy" type="button" data-copy="paul.richardson@kingswoodsports.co.uk">Copy</button></span></li>
+      <li><span class="who">Tom Lee, Vice-Chair</span>
+        <span class="line"><a class="val" href="mailto:tom.lee@kingswoodunited.co.uk">tom.lee@kingswoodunited.co.uk</a> <button class="copy" type="button" data-copy="tom.lee@kingswoodunited.co.uk">Copy</button></span></li>
+    </ul>
+    <h3>Outside the club</h3>
+    <p>Use these contacts if neither Paul nor Tom is the right person, or if you feel the club hasn't acted. You can also go to them directly at any time.</p>
+    <ul class="outside">
+      <li><span class="who">East Riding County FA Designated Safeguarding Officer</span>
+        <span class="line"><a class="val" href="mailto:safeguarding@eastridingfa.com">safeguarding@eastridingfa.com</a> <button class="copy" type="button" data-copy="safeguarding@eastridingfa.com">Copy</button></span>
+        <span class="soft">Football's local safeguarding lead.</span></li>
+      <li><span class="who"><a href="https://www.thefa.com/football-rules-governance/safeguarding/section-2-reporting-concerns">The FA Safeguarding Team</a></span>
+        <span class="line"><a class="val" href="tel:08001691863">0800 169 1863</a> <span>(leave a message)</span></span>
+        <span class="line"><a class="val" href="mailto:Safeguarding@TheFA.com">Safeguarding@TheFA.com</a> <button class="copy" type="button" data-copy="Safeguarding@TheFA.com">Copy</button></span>
+        <span class="soft">The national body, or if the usual routes haven't worked (whistleblowing).</span></li>
+      <li><span class="who">NSPCC Helpline</span>
+        <span class="line"><a class="val" href="tel:08088005000">0808 800 5000</a></span>
+        <span class="line"><a class="val" href="mailto:help@nspcc.org.uk">help@nspcc.org.uk</a> <button class="copy" type="button" data-copy="help@nspcc.org.uk">Copy</button></span>
+        <span class="soft">Independent advice about a child, at any time.</span></li>
+      <li><span class="who"><a href="https://www.hull.gov.uk/children/worried-child">Hull children's social care (EHASH)</a></span>
+        <span class="line"><a class="val" href="tel:01482448879">01482 448 879</a> <span>option 4</span></span>
+        <span class="soft">If your worry is about a child's safety at home or outside football.</span></li>
+    </ul>
+  </section>
+
+  <section id="next" aria-labelledby="h-next">
+    <h2 id="h-next">What happens after you raise a concern</h2>
+    <ol class="steps">
+      <li>Your concern reaches the welfare team through the report form. If you called, texted or emailed, the person you contacted completes the form for you.</li>
+      <li>It is checked straight away for immediate danger. If anyone is at immediate risk, the emergency services are called first.</li>
+      <li>It goes to the welfare contact for the age group involved, who records it and owns it from then on.</li>
+      <li>You get an acknowledgement within 5 days.</li>
+      <li>The welfare contact decides how it needs to be handled:
+        <ul class="levels">
+          <li class="g"><strong>Club level.</strong> Poor practice or a lower-level concern, dealt with inside the club.</li>
+          <li class="a"><strong>County FA advice.</strong> A possible risk of harm, or poor practice that keeps happening. The club consults the East Riding County FA Designated Safeguarding Officer.</li>
+          <li class="r"><strong>Referred on.</strong> A serious safeguarding concern or a disclosure of abuse, referred immediately to the County FA, children's social care or the police.</li>
+        </ul></li>
+      <li>The people who need to know are told. That can include parents or carers, the County FA, and social workers.</li>
+      <li>A concern is only closed once Alex, as Lead Welfare Officer, has checked that the record is complete, the agreed actions have happened and the people involved have been updated.</li>
+    </ol>
+    <p>What you share is handled sensitively and passed only to people who need it to keep someone safe. Nobody at the club can promise to keep a safeguarding concern secret, because it may need to be shared with the County FA, social care or the police to protect someone. Records are kept securely, with access limited to the welfare team and a small number of committee members.</p>
+    <p>The full process is in the <a href="#escalations-policy">Escalations Policy</a> and the <a href="#escalations-pathway">Escalations Pathway</a>.</p>
+  </section>
+
+  <section id="players" aria-labelledby="h-players">
+    <h2 id="h-players">If you're a player</h2>
+    <p class="lede">If anything at football makes you feel worried, upset, scared or uncomfortable, tell a grown-up you trust. It is never your fault and you won't be in trouble for speaking up.</p>
+    <ul class="plain">
+      <li>Tell your mum, dad or carer, or tell your coach.</li>
+      <li>The welfare team's job is to help keep everyone at the club safe and happy. Your coach or parent can help you talk to them.</li>
+      <li>You can tell them about something happening to you or to a friend.</li>
+      <li>If you're 16 or over, or play in one of our adult teams, you can contact Charlotte or any of the welfare team yourself.</li>
+      <li>If you'd rather talk to someone outside the club, call Childline free on <a class="val" href="tel:08001111">0800 1111</a> at any time. Adults can call Samaritans free on <a class="val" href="tel:116123">116 123</a>.</li>
+      <li>If someone online makes you uncomfortable, you can report it to <a href="https://www.ceop.police.uk/safety-centre/">CEOP</a>.</li>
+    </ul>
+  </section>
+
+  <section id="told" aria-labelledby="h-told">
+    <h2 id="h-told">If a child tells you something</h2>
+    <p>Stay calm and listen. Your job is to pass it on, not to work out whether it's true.</p>
+    <ul class="plain">
+      <li>Reassure them they have done the right thing by telling you.</li>
+      <li>Explain that you need to tell someone who can help. Don't promise to keep it secret.</li>
+      <li>Don't ask leading questions, investigate, or confront anyone.</li>
+      <li>Write down what was said as soon as you can, using the child's own words.</li>
+      <li>Report it the same day, using the <a href="https://forms.gle/k6hz9jeQwVFTM2Ue9" target="_blank" rel="noopener">report form</a> or by contacting the welfare team.</li>
+    </ul>
+  </section>
+
+  <section id="adults" aria-labelledby="h-adults">
+    <h2 id="h-adults">Concerns about an adult</h2>
+    <p>Kingswood United has adult teams and disabled players. Safeguarding covers adults too, including any adult who may be less able to protect themselves from harm.</p>
+    <ul class="plain">
+      <li>Report a concern about an adult in the same way: use the report form, or contact Charlotte or any of the welfare team.</li>
+      <li>If an adult is in immediate danger, call 999.</li>
+    </ul>
+    <ul class="outside">
+      <li><span class="who"><a href="https://www.hull.gov.uk/safeguarding/worried-adult/8">Hull Multi Agency Safeguarding Hub (adults)</a></span>
+        <span class="line"><a class="val" href="tel:01482616092">01482 616 092</a></span>
+        <span class="line"><a class="val" href="mailto:adultsafeguarding@hullcc.gov.uk">adultsafeguarding@hullcc.gov.uk</a> <button class="copy" type="button" data-copy="adultsafeguarding@hullcc.gov.uk">Copy</button></span>
+        <span class="soft">Hull City Council's team for concerns about an adult at risk of abuse or neglect.</span></li>
+    </ul>
+  </section>
+
+  <section id="emergency" class="alert" aria-labelledby="h-emergency">
+    <h2 id="h-emergency">Emergency at the ground</h2>
+    <p class="big">Call 999 if in any doubt.</p>
+    <h3>Kinloss Garth</h3>
+    <dl class="facts">
+      <dt>Address to give</dt><dd>Kinloss Garth Sports Field, Kinloss Garth, Hull <strong>HU7 4LY</strong></dd>
+      <dt>Defibrillator</dt><dd>On the wall next to the Tea Bar. Access code <strong>C159X</strong>.</dd>
+      <dt>Ambulance access</dt><dd>The main gate at the bottom of Kinloss Garth. Send an adult to the gate to meet the crew, and keep the yellow hatched area clear.</dd>
+      <dt>First aid kit</dt><dd>Every coach or manager carries one to every session and fixture.</dd>
+      <dt>Head, neck or back injury</dt><dd>Don't move the casualty. Wait for the ambulance.</dd>
+      <dt>Children</dt><dd>Never leave a child alone. If a child goes to hospital before a parent arrives, a DBS-checked coach or team official goes with them.</dd>
+      <dt>Missing child</dt><dd>Search the site and contact the parent or carer. If the child isn't found within 15 minutes, or you have any concern for their safety, call 999 and tell the welfare team.</dd>
+      <dt>Thunder or lightning</dt><dd>Stop play and take shelter. Don't restart until 30 minutes after the last thunder or lightning.</dd>
+      <dt>Fire or evacuation</dt><dd>Assembly point: the garages on Kinloss Garth, on the left outside the main gates.</dd>
+    </dl>
+    <h3>Other venues</h3>
+    <ul class="outside">
+      <li><span class="who">Kingswood Academy, HU7 4WD</span>
+        <span>Call 999 and give the venue name and postcode. The site is managed by Robertson Facilities Management: 24-hour helpdesk <a class="val" href="tel:01417390511">0141 739 0511</a>.</span></li>
+      <li><span class="who">Bude Park Playing Fields</span>
+        <span>Call 999 and give the venue name.</span>
+        <span class="todo">Preview note: postcode, access route and defibrillator location for Bude Park still to be added.</span></li>
+    </ul>
+    <h3>Not life-threatening</h3>
+    <ul class="numlist">
+      <li class="line"><span>Bransholme Urgent Treatment Centre, Goodhart Road, HU7 4DW:</span> <a class="val" href="tel:01482344665">01482 344665</a></li>
+      <li class="line"><span>Nearest A&amp;E:</span> <span>Hull Royal Infirmary, Anlaby Road, HU3 2JZ</span></li>
+      <li class="line"><span>NHS advice:</span> <a class="val" href="tel:111">111</a></li>
+    </ul>
+    <h3>Afterwards</h3>
+    <p>Tell the Health and Safety Officer, Paul Richardson, the same day on <a class="val" href="tel:07775916403">07775 916403</a>, and complete an accident or incident report within 24 hours. Report near misses too. Please don't share details of an injury or incident in WhatsApp groups or on social media.</p>
+    <p>The full plan is the <a href="#emergency-action-plan">Emergency Action Plan</a>.</p>
+  </section>
+
+  <section id="documents" aria-labelledby="h-docs">
+    <h2 id="h-docs">Our policies and codes of conduct</h2>
+    <p>Tap a document marked + to read it here, or open it as a PDF to save or print. Documents marked ↗ open on the club website.</p>
+    <div class="group">
+      <h3>Kingswood United FC policies</h3>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Safeguarding%20Policy%20and%20Procedures%20-%20KUFC-SP-01.pdf" target="_blank" rel="noopener"><span class="t">Safeguarding Policy and Procedures <span class="ref">KUFC-SP-01</span></span><span class="n">Opens on the club website</span></a>
+      <details class="doc" id="escalations-policy">
+        <summary><span class="t">Welfare and Safeguarding Escalations Policy 2026/27 <span class="ref">KUFC-WSP-2026-V1</span></span><span class="n">3 pages</span></summary>
+        <p class="pdf"><a href="pdf/escalations-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/escalations-policy-1.webp" width="1000" height="1414" alt="Welfare and Safeguarding Escalations Policy 2026/27, page 1 of 3">
+          <img loading="lazy" src="docs/escalations-policy-2.webp" width="1000" height="1414" alt="Welfare and Safeguarding Escalations Policy 2026/27, page 2 of 3">
+          <img loading="lazy" src="docs/escalations-policy-3.webp" width="1000" height="1414" alt="Welfare and Safeguarding Escalations Policy 2026/27, page 3 of 3">
+        </div>
+      </details>
+      <details class="doc" id="escalations-pathway">
+        <summary><span class="t">Welfare and Safeguarding Escalations Pathway </span><span class="n">3 pages</span></summary>
+        <p class="pdf"><a href="pdf/escalations-pathway.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/escalations-pathway-1.webp" width="1100" height="778" alt="Welfare and Safeguarding Escalations Pathway, page 1 of 3">
+          <img loading="lazy" src="docs/escalations-pathway-2.webp" width="1100" height="778" alt="Welfare and Safeguarding Escalations Pathway, page 2 of 3">
+          <img loading="lazy" src="docs/escalations-pathway-3.webp" width="1100" height="778" alt="Welfare and Safeguarding Escalations Pathway, page 3 of 3">
+        </div>
+      </details>
+      <details class="doc" id="emergency-action-plan">
+        <summary><span class="t">Emergency Action Plan <span class="ref">KUFC-EAP-01</span></span><span class="n">2 pages</span></summary>
+        <p class="pdf"><a href="pdf/emergency-action-plan.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/emergency-action-plan-1.webp" width="1000" height="1414" alt="Emergency Action Plan, page 1 of 2">
+          <img loading="lazy" src="docs/emergency-action-plan-2.webp" width="1000" height="1414" alt="Emergency Action Plan, page 2 of 2">
+        </div>
+      </details>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Bullying%20and%20Harassment%20Policy%20-%20KUFC-BH-01.pdf" target="_blank" rel="noopener"><span class="t">Bullying and Harassment Policy <span class="ref">KUFC-BH-01</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Complaints%20Policy%20and%20Procedures%20-%20KUFC-CP-01.pdf" target="_blank" rel="noopener"><span class="t">Complaints Policy and Procedures <span class="ref">KUFC-CP-01</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Whistleblowing%20Policy%20-%20KUFC-WB-01.pdf" target="_blank" rel="noopener"><span class="t">Whistleblowing Policy <span class="ref">KUFC-WB-01</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Social%20Media%20Policy%20and%20Procedures%20-%20KUFC-SM-01.pdf" target="_blank" rel="noopener"><span class="t">Social Media Policy and Procedures <span class="ref">KUFC-SM-01</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Equality%20%26%20Diversity%20Policy%20-%20KUFC-ED-01.pdf" target="_blank" rel="noopener"><span class="t">Equality and Diversity Policy <span class="ref">KUFC-ED-01</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Health%20%26%20Safety%20Policy%20-%20KUFC-HS-01.pdf" target="_blank" rel="noopener"><span class="t">Health and Safety Policy <span class="ref">KUFC-HS-01</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Mission%20Statement%20and%20Values.pdf" target="_blank" rel="noopener"><span class="t">Mission Statement and Values </span><span class="n">Opens on the club website</span></a>
+      <p>Originals: <a href="https://www.kingswoodunited.co.uk/policies">kingswoodunited.co.uk/policies</a></p>
+    </div>
+    <div class="group">
+      <h3>Codes of conduct</h3>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Kingswood%20United%20FC%20Coaches%20Team%20Managers%20and%20Officials%20Code%20of%20Conduct%20-%20KU-CTMOCC-01.pdf" target="_blank" rel="noopener"><span class="t">Code of Conduct for Coaches, Team Managers and Officials <span class="ref">KU-CTMOCC-01</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Grassroots%20Code%20Youth%20-%20MCH%20Version.pdf" target="_blank" rel="noopener"><span class="t">The Grassroots Code for Youth Football <span class="ref">England Football</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Grassroots%20Code%20Adults%20in%20Youth%20Football%20-%20MCH%20Version.pdf" target="_blank" rel="noopener"><span class="t">The Grassroots Code for Adults in Youth Football <span class="ref">England Football</span></span><span class="n">Opens on the club website</span></a>
+      <a class="doclink" href="https://www.myclub-hub.com/uploads/468/policies/Grassroots%20Code%20Adults%20-%20Signable%20Version.pdf" target="_blank" rel="noopener"><span class="t">The Grassroots Code for Adult Football <span class="ref">England Football</span></span><span class="n">Opens on the club website</span></a>
+    </div>
+    <div class="group">
+      <h3>Kingswood Sports CIO policies</h3>
+      <p>Kingswood United FC is part of Kingswood Sports CIO, the charity that runs the club. These charity-wide policies sit above the club's own.</p>
+      <details class="doc" id="cio-safeguarding-policy">
+        <summary><span class="t">Safeguarding Policy and Procedures <span class="ref">KS-SP-01</span></span><span class="n">4 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-safeguarding-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-safeguarding-policy-1.webp" width="1000" height="1413" alt="Safeguarding Policy and Procedures, page 1 of 4">
+          <img loading="lazy" src="docs/cio-safeguarding-policy-2.webp" width="1000" height="1413" alt="Safeguarding Policy and Procedures, page 2 of 4">
+          <img loading="lazy" src="docs/cio-safeguarding-policy-3.webp" width="1000" height="1413" alt="Safeguarding Policy and Procedures, page 3 of 4">
+          <img loading="lazy" src="docs/cio-safeguarding-policy-4.webp" width="1000" height="1413" alt="Safeguarding Policy and Procedures, page 4 of 4">
+        </div>
+      </details>
+      <details class="doc" id="cio-safeguarding-vulnerable-beneficiaries">
+        <summary><span class="t">Safeguarding Vulnerable Beneficiaries Policy <span class="ref">KS-SVB-01</span></span><span class="n">4 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-safeguarding-vulnerable-beneficiaries.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-safeguarding-vulnerable-beneficiaries-1.webp" width="1000" height="1413" alt="Safeguarding Vulnerable Beneficiaries Policy, page 1 of 4">
+          <img loading="lazy" src="docs/cio-safeguarding-vulnerable-beneficiaries-2.webp" width="1000" height="1413" alt="Safeguarding Vulnerable Beneficiaries Policy, page 2 of 4">
+          <img loading="lazy" src="docs/cio-safeguarding-vulnerable-beneficiaries-3.webp" width="1000" height="1413" alt="Safeguarding Vulnerable Beneficiaries Policy, page 3 of 4">
+          <img loading="lazy" src="docs/cio-safeguarding-vulnerable-beneficiaries-4.webp" width="1000" height="1413" alt="Safeguarding Vulnerable Beneficiaries Policy, page 4 of 4">
+        </div>
+      </details>
+      <details class="doc" id="cio-serious-incident-reporting">
+        <summary><span class="t">Serious Incident Reporting Policy and Procedures <span class="ref">KS-SIR-01</span></span><span class="n">4 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-serious-incident-reporting.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-serious-incident-reporting-1.webp" width="1000" height="1413" alt="Serious Incident Reporting Policy and Procedures, page 1 of 4">
+          <img loading="lazy" src="docs/cio-serious-incident-reporting-2.webp" width="1000" height="1413" alt="Serious Incident Reporting Policy and Procedures, page 2 of 4">
+          <img loading="lazy" src="docs/cio-serious-incident-reporting-3.webp" width="1000" height="1413" alt="Serious Incident Reporting Policy and Procedures, page 3 of 4">
+          <img loading="lazy" src="docs/cio-serious-incident-reporting-4.webp" width="1000" height="1413" alt="Serious Incident Reporting Policy and Procedures, page 4 of 4">
+        </div>
+      </details>
+      <details class="doc" id="cio-whistleblowing-policy">
+        <summary><span class="t">Whistleblowing Policy <span class="ref">KS-WB-01</span></span><span class="n">4 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-whistleblowing-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-whistleblowing-policy-1.webp" width="1000" height="1413" alt="Whistleblowing Policy, page 1 of 4">
+          <img loading="lazy" src="docs/cio-whistleblowing-policy-2.webp" width="1000" height="1413" alt="Whistleblowing Policy, page 2 of 4">
+          <img loading="lazy" src="docs/cio-whistleblowing-policy-3.webp" width="1000" height="1413" alt="Whistleblowing Policy, page 3 of 4">
+          <img loading="lazy" src="docs/cio-whistleblowing-policy-4.webp" width="1000" height="1413" alt="Whistleblowing Policy, page 4 of 4">
+        </div>
+      </details>
+      <details class="doc" id="cio-bullying-and-harassment-policy">
+        <summary><span class="t">Bullying and Harassment Policy <span class="ref">KS-BH-01</span></span><span class="n">3 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-bullying-and-harassment-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-bullying-and-harassment-policy-1.webp" width="1000" height="1413" alt="Bullying and Harassment Policy, page 1 of 3">
+          <img loading="lazy" src="docs/cio-bullying-and-harassment-policy-2.webp" width="1000" height="1413" alt="Bullying and Harassment Policy, page 2 of 3">
+          <img loading="lazy" src="docs/cio-bullying-and-harassment-policy-3.webp" width="1000" height="1413" alt="Bullying and Harassment Policy, page 3 of 3">
+        </div>
+      </details>
+      <details class="doc" id="cio-complaints-policy">
+        <summary><span class="t">Complaints Policy and Procedures <span class="ref">KS-CP-01</span></span><span class="n">4 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-complaints-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-complaints-policy-1.webp" width="1000" height="1413" alt="Complaints Policy and Procedures, page 1 of 4">
+          <img loading="lazy" src="docs/cio-complaints-policy-2.webp" width="1000" height="1413" alt="Complaints Policy and Procedures, page 2 of 4">
+          <img loading="lazy" src="docs/cio-complaints-policy-3.webp" width="1000" height="1413" alt="Complaints Policy and Procedures, page 3 of 4">
+          <img loading="lazy" src="docs/cio-complaints-policy-4.webp" width="1000" height="1413" alt="Complaints Policy and Procedures, page 4 of 4">
+        </div>
+      </details>
+      <details class="doc" id="cio-social-media-policy">
+        <summary><span class="t">Social Media Policy and Procedures <span class="ref">KS-SM-01</span></span><span class="n">4 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-social-media-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-social-media-policy-1.webp" width="1000" height="1413" alt="Social Media Policy and Procedures, page 1 of 4">
+          <img loading="lazy" src="docs/cio-social-media-policy-2.webp" width="1000" height="1413" alt="Social Media Policy and Procedures, page 2 of 4">
+          <img loading="lazy" src="docs/cio-social-media-policy-3.webp" width="1000" height="1413" alt="Social Media Policy and Procedures, page 3 of 4">
+          <img loading="lazy" src="docs/cio-social-media-policy-4.webp" width="1000" height="1413" alt="Social Media Policy and Procedures, page 4 of 4">
+        </div>
+      </details>
+      <details class="doc" id="cio-data-protection-policy">
+        <summary><span class="t">Data Protection Policy <span class="ref">KS-DP-01</span></span><span class="n">5 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-data-protection-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-data-protection-policy-1.webp" width="1000" height="1413" alt="Data Protection Policy, page 1 of 5">
+          <img loading="lazy" src="docs/cio-data-protection-policy-2.webp" width="1000" height="1413" alt="Data Protection Policy, page 2 of 5">
+          <img loading="lazy" src="docs/cio-data-protection-policy-3.webp" width="1000" height="1413" alt="Data Protection Policy, page 3 of 5">
+          <img loading="lazy" src="docs/cio-data-protection-policy-4.webp" width="1000" height="1413" alt="Data Protection Policy, page 4 of 5">
+          <img loading="lazy" src="docs/cio-data-protection-policy-5.webp" width="1000" height="1413" alt="Data Protection Policy, page 5 of 5">
+        </div>
+      </details>
+      <details class="doc" id="cio-confidentiality-policy">
+        <summary><span class="t">Confidentiality Policy <span class="ref">KS-CO-01</span></span><span class="n">5 pages</span></summary>
+        <p class="pdf"><a href="pdf/cio-confidentiality-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/cio-confidentiality-policy-1.webp" width="1000" height="1413" alt="Confidentiality Policy, page 1 of 5">
+          <img loading="lazy" src="docs/cio-confidentiality-policy-2.webp" width="1000" height="1413" alt="Confidentiality Policy, page 2 of 5">
+          <img loading="lazy" src="docs/cio-confidentiality-policy-3.webp" width="1000" height="1413" alt="Confidentiality Policy, page 3 of 5">
+          <img loading="lazy" src="docs/cio-confidentiality-policy-4.webp" width="1000" height="1413" alt="Confidentiality Policy, page 4 of 5">
+          <img loading="lazy" src="docs/cio-confidentiality-policy-5.webp" width="1000" height="1413" alt="Confidentiality Policy, page 5 of 5">
+        </div>
+      </details>
+      <p>All CIO policies: <a href="https://www.kingswoodsports.co.uk/policies-and-documents">kingswoodsports.co.uk/policies-and-documents</a></p>
+    </div>
+  </section>
+
+  <section id="other" aria-labelledby="h-other">
+    <h2 id="h-other">Other questions and complaints</h2>
+    <p>Not every issue is a safeguarding concern. Questions or complaints about things like team selection, playing time, fees or registration go to the club committee.</p>
+    <p class="line"><a class="val" href="mailto:committee@kingswoodunited.co.uk">committee@kingswoodunited.co.uk</a> <button class="copy" type="button" data-copy="committee@kingswoodunited.co.uk">Copy</button></p>
+  </section>
+
+  <section id="share" aria-labelledby="h-share">
+    <h2 id="h-share">Share this page</h2>
+    <div class="share">
+      <img src="img/qr.png" alt="QR code that opens this page" width="132" height="132">
+      <div>
+        <p>Ask another parent, player or coach to scan this code with their phone camera, or send them the link.</p>
+        <p class="line"><span class="val">https://kingswood-united-fc.github.io/safeguarding-hub/</span> <button class="copy" type="button" data-copy="https://kingswood-united-fc.github.io/safeguarding-hub/">Copy</button></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logos">
+      <img src="img/accredited.png" alt="England Football Accredited Club, three stars" width="127" height="44">
+    </div>
+    <p>Kingswood United FC is part of Kingswood Sports CIO, Registered Charity No. 1202392. Page last updated 8 October 2026.</p>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.copy');
+  if (!b) return;
+  var text = b.getAttribute('data-copy');
+  var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1600); };
+  var fallback = function () {
+    var v = b.parentElement.querySelector('.val');
+    if (!v) return;
+    var r = document.createRange(); r.selectNodeContents(v);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    b.textContent = 'Selected';
+    setTimeout(function () { b.textContent = 'Copy'; }, 1600);
+  };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (err) { fallback(); }
+});
+// A link to a document further down the page opens that document as well as scrolling to it.
+function openTarget() {
+  var el = location.hash && document.getElementById(location.hash.slice(1));
+  if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView(); }
+}
+window.addEventListener('hashchange', openTarget);
+openTarget();
+</script>
+
+</body>
+</html>
